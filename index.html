@@ -335,8 +335,8 @@
   }
 
   .stat-label {
-    font-size: 11px;
-    color: rgba(253,250,244,0.4);
+    font-size: 13px;
+    color: rgba(253,250,244,0.65);
     letter-spacing: 0.15em;
     font-weight: 300;
   }
@@ -351,10 +351,10 @@
   }
 
   .section-label {
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.4em;
     color: var(--gold);
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -557,7 +557,7 @@
 
   .step-time {
     margin-top: 20px;
-    font-size: 12px;
+    font-size: 14px;
     color: var(--gold);
     letter-spacing: 0.1em;
   }
@@ -623,8 +623,8 @@
     background: rgba(197,165,90,0.05);
     border: 1px dashed rgba(197,165,90,0.2);
     padding: 20px;
-    font-size: 12px;
-    color: rgba(253,250,244,0.4);
+    font-size: 13px;
+    color: rgba(253,250,244,0.7);
     line-height: 1.8;
     letter-spacing: 0.03em;
   }
@@ -667,11 +667,11 @@
 
   .guide-card-num {
     font-family: 'Shippori Mincho', serif;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.3em;
-    color: rgba(197,165,90,0.6);
+    color: rgba(197,165,90,0.85);
     margin-bottom: 12px;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   .guide-card h3 {
@@ -725,8 +725,8 @@
   }
 
   .guide-adoption-stat p {
-    font-size: 12px;
-    color: rgba(253,250,244,0.4);
+    font-size: 13px;
+    color: rgba(253,250,244,0.65);
     letter-spacing: 0.1em;
     font-weight: 300;
   }
@@ -845,8 +845,8 @@
   }
 
   .plan-sub {
-    font-size: 12px;
-    color: rgba(253,250,244,0.4);
+    font-size: 13px;
+    color: rgba(253,250,244,0.65);
     letter-spacing: 0.15em;
     margin-bottom: 32px;
     font-weight: 300;
@@ -870,7 +870,7 @@
 
   .plan-price .unit {
     font-size: 14px;
-    color: rgba(253,250,244,0.4);
+    color: rgba(253,250,244,0.65);
     margin-left: 8px;
     font-weight: 300;
   }
@@ -1028,9 +1028,14 @@
   }
 
   .faq-item {
-    border-bottom: 1px solid rgba(197,165,90,0.1);
-    padding: 28px 0;
-    cursor: pointer;
+    border-bottom: 1px solid rgba(197,165,90,0.15);
+  }
+
+  .faq-item summary {
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
   }
 
   .faq-q {
@@ -1038,6 +1043,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 24px;
+    padding: 28px 0;
+    cursor: pointer;
   }
 
   .faq-q-text {
@@ -1048,24 +1055,25 @@
     line-height: 1.5;
   }
 
-  .faq-q span {
+  .faq-icon {
     color: var(--gold);
-    font-size: 20px;
+    font-size: 24px;
     flex-shrink: 0;
     transition: transform 0.3s;
+    line-height: 1;
+  }
+
+  details[open] .faq-icon {
+    transform: rotate(45deg);
   }
 
   .faq-a {
     font-size: 15px;
     line-height: 1.9;
     color: rgba(253,250,244,0.78);
-    padding-top: 20px;
+    padding: 0 0 28px 0;
     font-weight: 300;
-    display: none;
   }
-
-  .faq-item.open .faq-a { display: block; }
-  .faq-item.open .faq-q span { transform: rotate(45deg); }
 
   /* ─── CTA SECTION ─── */
   .cta-section {
@@ -1112,8 +1120,8 @@
   }
 
   .cta-note {
-    font-size: 12px;
-    color: rgba(253,250,244,0.3);
+    font-size: 14px;
+    color: rgba(253,250,244,0.55);
     margin-top: 20px;
     letter-spacing: 0.1em;
     font-weight: 300;
@@ -1140,16 +1148,16 @@
   }
 
   .footer-brand p {
-    font-size: 12px;
-    color: rgba(253,250,244,0.3);
+    font-size: 13px;
+    color: rgba(253,250,244,0.5);
     letter-spacing: 0.15em;
     font-weight: 300;
     line-height: 1.7;
   }
 
   .footer-note {
-    font-size: 11px;
-    color: rgba(253,250,244,0.2);
+    font-size: 13px;
+    color: rgba(253,250,244,0.4);
     line-height: 1.8;
     max-width: 500px;
     text-align: right;
@@ -1461,42 +1469,47 @@
     <div class="section-label">FAQ</div>
     <h2 class="section-title">よくある質問</h2>
     <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">
+
+      <details class="faq-item">
+        <summary class="faq-q">
           <span class="faq-q-text">本当に無料ですか？何か後から請求されませんか？</span>
-          <span>+</span>
-        </div>
+          <span class="faq-icon">+</span>
+        </summary>
         <div class="faq-a">
           Entry版は完全無料です。クレジットカードの登録も不要です。後から自動的に有料プランに移行することはありません。Pro版への移行は、ご自身の判断で行っていただけます。
         </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
           <span class="faq-q-text">申請書の代行もしてもらえますか？</span>
-          <span>+</span>
-        </div>
+          <span class="faq-icon">+</span>
+        </summary>
         <div class="faq-a">
           申請書類のドラフト生成はできますが、申請代行は行政書士業務に該当するため、HELMでは対応していません。生成されたドラフトを商工会議所・商工会の担当者にご相談の上、最終的な申請書に仕上げていただく形をおすすめします。
         </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
           <span class="faq-q-text">どんな業種・規模でも使えますか？</span>
-          <span>+</span>
-        </div>
+          <span class="faq-icon">+</span>
+        </summary>
         <div class="faq-a">
           持続化補助金の対象は、商業・サービス業で従業員5名以下、製造業その他で20名以下の小規模事業者です。Entry版はこの対象事業者向けに設計されています。それ以上の規模の企業には、全12分析が揃うPro版をおすすめします。
         </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
           <span class="faq-q-text">持続化補助金の第19回の締切はいつですか？</span>
-          <span>+</span>
-        </div>
+          <span class="faq-icon">+</span>
+        </summary>
         <div class="faq-a">
           第19回の申請締切は2026年4月30日（水）です。商工会議所・商工会への書類提出は締切の数日前までに行う必要があります。余裕をもって今すぐ着手されることをおすすめします。
         </div>
-      </div>
+      </details>
+
     </div>
   </div>
 </section>
